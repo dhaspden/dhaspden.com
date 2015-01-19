@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 exports.setup = function(app, express) {
 
-  app.set('views', path.join(__dirname + '/../public/src/views'));
+  app.set('views', path.join(__dirname + '/../public/dist/views'));
   app.engine('html', require('ejs').renderFile);
   app.use(logger('dev'));
   app.use(bodyParser.json());
