@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   
-  var jsFiles = ['**/*.js', '!node_modules/**'];
+  var jsFiles = ['**/*.js', '!bower_components/**' , '!node_modules/**'];
   var htmlFiles = ['public/src/views/*'];
 
   grunt.initConfig({

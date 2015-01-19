@@ -1,0 +1,23 @@
+{
+  "name": "dhaspden.com",
+  "version": "0.0.0",
+  "authors": [
+    "Dylan Aspden <dhaspden@gmail.com>"
+  ],
+  "main": "start.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.9"
+  }
+}
