@@ -31,6 +31,14 @@ module.exports = function(grunt) {
       }
     },
 
+    cssmin: {
+      controlCss: {
+        files: {
+          'public/dist/css/style.min.css': 'public/src/css/style.css'
+        }
+      }
+    },
+
     uglify: {
       controlJs: {
         files: {
@@ -42,7 +50,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [jsFiles, htmlFiles],
-        tasks: ['copy', 'htmlmin', 'uglify', 'jshint']
+        tasks: ['copy', 'htmlmin', 'cssmin', 'uglify', 'jshint']
       }
     }
   });
@@ -50,6 +58,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
