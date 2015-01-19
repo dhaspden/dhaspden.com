@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   
-  var jsFiles = ['**/*.js', '!public/bower_components/**' , '!node_modules/**'];
+  var jsFiles = ['**/*.js', '!**/*.min.js' ,'!public/bower_components/**' , '!node_modules/**'];
   var htmlFiles = ['public/src/views/*'];
 
   grunt.initConfig({
@@ -31,10 +31,18 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      controlJs: {
+        files: {
+          'public/dist/js/main.min.js': 'public/src/js/main.js'
+        }
+      }
+    },
+
     watch: {
       scripts: {
         files: [jsFiles, htmlFiles],
-        tasks: ['copy', 'htmlmin', 'jshint']
+        tasks: ['copy', 'htmlmin', 'uglify', 'jshint']
       }
     }
   });
@@ -42,6 +50,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
 };
