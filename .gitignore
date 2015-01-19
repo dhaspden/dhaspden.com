@@ -1,0 +1,18 @@
+node_modules
+bower_components
+
+npm-debug.log
+
+.DS_Store
+.Spotlight-V100
+.apdisk
+.AppleDouble
+.LSOverride
+.Trashes
+.AppleDB
+.AppleDesktop
+
+Network Trash Folder
+Temporary Items
+
+.grunt
