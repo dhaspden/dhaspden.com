@@ -2,6 +2,7 @@ module.exports = function(grunt) {
   
   var jsFiles = ['**/*.js', '!**/*.min.js' ,'!public/bower_components/**' , '!node_modules/**'];
   var htmlFiles = ['public/src/views/*'];
+  var cssFiles = ['public/src/css/*'];
 
   grunt.initConfig({
     package: grunt.file.readJSON('package.json'),
@@ -49,7 +50,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: [jsFiles, htmlFiles],
+        files: [jsFiles, htmlFiles, cssFiles],
         tasks: ['copy', 'htmlmin', 'cssmin', 'uglify', 'jshint']
       }
     }
