@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   
   var jsFiles = ['**/*.js', '!**/*.min.js' ,'!public/bower_components/**' , '!node_modules/**'];
+  var cssFiles = ['public/src/**/*.css', '!**/*.min.css'];
+  var htmlFiles = ['public/src/**/*.html', '!public/dist/**/*.html'];
 
   grunt.initConfig({
     package: grunt.file.readJSON('package.json'),
@@ -9,6 +11,27 @@ module.exports = function(grunt) {
       scripts: jsFiles,
       options: {
         reporter: require('jshint-stylish')
+      }
+    },
+
+    csslint: {
+      strict: {
+        src: ['public/src/css/*.css']
+      }
+    },
+
+    htmlangular: {
+      files: {
+        src: ['public/src/views/*.html']
+      }
+    },
+
+    concurrent: {
+      lint: {
+        tasks: ['watch:scripts', 'watch:style', 'watch:markup'],
+        options: {
+          logConcurrentOutput: true
+        }
       }
     },
 
@@ -70,18 +93,34 @@ module.exports = function(grunt) {
       scripts: {
         files: jsFiles,
         tasks: 'jshint'
+      },
+      style: {
+        files: cssFiles,
+        tasks: 'csslint:strict'
+      },
+      markup: {
+        files: htmlFiles,
+        tasks: 'htmlangular:files'
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-html-angular-validate');
+  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-processhtml');
+
+  grunt.registerTask('lint', [
+    'concurrent:lint'
+  ]);
 
   grunt.registerTask('build', [
     'copy:files',
