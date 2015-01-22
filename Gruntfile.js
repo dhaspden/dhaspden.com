@@ -23,6 +23,9 @@ module.exports = function(grunt) {
     htmlangular: {
       files: {
         src: ['public/src/views/*.html']
+      },
+      options: {
+        reportpath: null
       }
     },
 
