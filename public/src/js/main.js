@@ -1,4 +1,4 @@
-var dependencies = [];
+var dependencies = ['ui.router'];
 var application = angular.module('application', dependencies);
 
 application.run(['$rootScope', '$state', '$stateParams',
@@ -9,3 +9,16 @@ application.run(['$rootScope', '$state', '$stateParams',
 
   }
 ]);
+
+application.config(['$stateProvider', '$urlRouterProvider',
+  function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+    $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'dist/views/main.html'
+    });
+
+  }]
+);
