@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 
     htmlangular: {
       files: {
-        src: ['public/src/views/*.html']
+        src: ['public/src/views/index.html']
       },
       options: {
         reportpath: null
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
     uglify: {
       scripts: {
         files: {
-          'public/dist/js/main.min.js': 'public/dist/js/main.js'
+          'public/dist/js/main.min.js': ['public/dist/js/main.js', 'public/dist/js/directives.js']
         }
       }
     },
@@ -79,7 +79,8 @@ module.exports = function(grunt) {
           collapseWhitespace: true,
         },
         files: {
-          'public/dist/views/index.html': 'public/dist/views/index.html'
+          'public/dist/views/index.html': 'public/dist/views/index.html',
+          'public/dist/views/main.html' : 'public/dist/views/main.html'
         }
       }
     },
