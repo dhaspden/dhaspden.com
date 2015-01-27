@@ -75,6 +75,14 @@ module.exports = function(grunt) {
       }
     },
 
+    imagemin: {
+      images: {
+        files: {
+          'public/dist/img/bg.jpeg': 'public/src/img/bg.jpeg'
+        }
+      }
+    },
+
     htmlmin: {
       minify: {
         options: {
@@ -99,7 +107,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: jsFiles,
-        tasks: 'jshint'
+        tasks: 'jshint:scripts'
       },
       style: {
         files: cssFiles,
@@ -124,6 +132,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-processhtml');
 
 
@@ -136,6 +145,7 @@ module.exports = function(grunt) {
     'copy:files',
     'cssmin:minify',
     'uglify:scripts',
+    'imagemin:images',
     'processhtml:change',
     'htmlmin:minify',
     'clean:files'
