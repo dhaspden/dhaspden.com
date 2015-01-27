@@ -1,3 +1,4 @@
+/* Importing new fonts */
 @font-face {
   font-family: FiraSansLight;
   src: url('../../bower_components/fira/eot/FiraSans-Light.eot?#iefix') format('embedded-opentype'), 
@@ -13,15 +14,25 @@
        url('../../bower_components/fira/ttf/FiraSans-Medium.ttf')  format('truetype'),
        url('../../bower_components/fira/otf/FiraSans-Medium.otf') format('opentype');
 }
+/* --- */
 
+/* Body styling for background */
 body {
-  background: url(../img/bg.png) repeat center center fixed;
+  background: url(../img/bg.jpeg) repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
+/* Fixing the width of the icon so each button is the same size */
+.icon-fixed-width {
+  width: 1.28571429em;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Sets up the content so that it is centered vertically on page */
 .outer {
   display: table;
   position: relative;
@@ -34,21 +45,58 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
+/* --- */
 
-h1 {
+/* Styling for my name and title */
+.my-name {
   color: white;
   font-size: 52px;
   font-family: FiraSansMedium;
+  text-align: center;
+  text-shadow: 5px 5px 5px #000000;
 }
 
-h3 {
+.my-title {
   color: white;
   margin-top: -3px;
   font-family: FiraSansLight;
+  text-align: center;
+  text-shadow: 5px 5px 5px #000000;
 }
+/* --- */
 
 hr {
   margin-top: -1px;
   border-width: 2px 0;
   width: 50%;
+  box-shadow: 5px 5px 5px #000000;
+}
+
+/* Styling for all of the social buttons */
+.social {
+  border: none;
+  -webkit-transition: background-color 1s, color 1s;
+  transition: background-color 1s, color 1s;
+  box-shadow: 5px 5px 5px #000000;
+}
+
+.facebook:hover {
+  color: white;
+  background-color: #234C8A;
+}
+
+.github:hover {
+  color: white;
+  background-color: #343434;
+}
+
+.linkedin:hover {
+  color: white;
+  background-color: #0F64AC;
+}
+/* --- */
+
+.e-mail:hover {
+  color: white;
+  background-color: #F18300;
 }
