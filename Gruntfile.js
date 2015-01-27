@@ -51,6 +51,9 @@ module.exports = function(grunt) {
       files: {
         src: ['public/dist/css/*.css', '!public/dist/css/*.min.css',
               'public/dist/js/*.js'  , '!public/dist/js/*.min.js']
+      },
+      newbuild: {
+        src: ['public/dist/**/*', 'public/dist']
       }
     },
 
@@ -107,6 +110,7 @@ module.exports = function(grunt) {
         tasks: 'htmlangular:files'
       }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -122,11 +126,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-processhtml');
 
+
   grunt.registerTask('lint', [
     'concurrent:lint'
   ]);
 
   grunt.registerTask('build', [
+    'clean:newbuild',
     'copy:files',
     'cssmin:minify',
     'uglify:scripts',
