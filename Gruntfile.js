@@ -70,7 +70,8 @@ module.exports = function(grunt) {
     uglify: {
       scripts: {
         files: {
-          'public/dist/js/main.min.js': ['public/dist/js/main.js', 'public/dist/js/directives.js']
+          'public/dist/js/main.min.js': ['public/dist/js/main.js', 'public/dist/js/directives.js',
+                                         'public/dist/js/analytics.js']
         }
       }
     },
