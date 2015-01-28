@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     clean: {
       files: {
         src: ['public/dist/css/*.css', '!public/dist/css/*.min.css',
-              'public/dist/js/*.js'  , '!public/dist/js/*.min.js']
+              'public/dist/js/*.js'  , '!public/dist/js/*.min.js', '!public/dist/js/analytics*']
       },
       newbuild: {
         src: ['public/dist/**/*', 'public/dist']
@@ -70,8 +70,7 @@ module.exports = function(grunt) {
     uglify: {
       scripts: {
         files: {
-          'public/dist/js/main.min.js': ['public/dist/js/main.js', 'public/dist/js/directives.js',
-                                         'public/dist/js/analytics.js']
+          'public/dist/js/main.min.js': ['public/dist/js/main.js', 'public/dist/js/directives.js']
         }
       }
     },
