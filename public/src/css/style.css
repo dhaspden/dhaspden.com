@@ -76,6 +76,8 @@ hr {
 .social {
   border: none;
   -webkit-transition: background-color 1s, color 1s;
+  -moz-transition: background-color 1s, color 1s;
+  -o-transition: background-color 1s, color 1s;
   transition: background-color 1s, color 1s;
   box-shadow: 5px 5px 5px #000000;
 }
