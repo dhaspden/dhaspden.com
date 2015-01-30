@@ -75,30 +75,30 @@ hr {
 /* Styling for all of the social buttons */
 .social {
   border: none;
-  -webkit-transition: background-color 1s, color 1s;
-  -moz-transition: background-color 1s, color 1s;
-  -o-transition: background-color 1s, color 1s;
-  transition: background-color 1s, color 1s;
-  box-shadow: 5px 5px 5px #000000;
+  color: white;
+  -webkit-transition: color 1s;
+  -moz-transition: color 1s;
+  -o-transition: color 1s;
+  transition: color 1s;
 }
 
 .facebook:hover {
-  color: white;
-  background-color: #234C8A;
+  color: #234C8A;
 }
 
 .github:hover {
-  color: white;
-  background-color: #343434;
+  color: #343434;
 }
 
 .linkedin:hover {
-  color: white;
-  background-color: #0F64AC;
+  color: #0F64AC;
 }
-/* --- */
 
 .e-mail:hover {
-  color: white;
-  background-color: #F18300;
+  color: #F18300;
 }
+
+.hvr-buzz {
+  vertical-align: baseline;
+}
+/* --- */
