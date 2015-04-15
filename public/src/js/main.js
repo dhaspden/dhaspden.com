@@ -1,6 +1,7 @@
-var dependencies = ['ui.router', 'application.directives'];
+var dependencies = ['ui.router', 'duScroll', 'application.controllers.main'];
 var application = angular.module('application', dependencies);
 
+/* Configures the state manager for the Angular application */
 application.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
   function($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -15,12 +16,14 @@ application.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'dist/views/main.html'
+      controller: 'MainController',
+      templateUrl: 'src/views/main.html'
     });
 
   }]
 );
 
+/* Runs when the Angular application starts */
 application.run(['$rootScope', '$state', '$stateParams',
   function($rootScope, $state, $stateParams) {
 

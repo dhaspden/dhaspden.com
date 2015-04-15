@@ -8,9 +8,8 @@
 
     <base href="/">
 
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"  type="text/css">
+    <link rel="stylesheet" href="bower_components/bootswatch-dist/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="bower_components/Hover/css/hover-min.css"               type="text/css">
 
     <!-- build:css dist/css/style.min.css -->
     <link rel="stylesheet" type="text/css" href="src/css/style.css">
@@ -23,18 +22,20 @@
     <!-- /build -->
   </head>
 
-  <body ng-app="application">
+  <body ng-app="application" id="top">
 
-    <div ui-view></div>
+    <div id="particles-js" ui-view></div>
 
-    <script src="bower_components/angular/angular.min.js"                             type="text/javascript" ></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript" ></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"                          type="text/javascript" ></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"                 type="text/javascript" ></script>
+    <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.min.js" type="text/javascript"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="bower_components/bootswatch-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="bower_components/particles.js/particles.js" type="text/javascript"></script>
 
     <!-- build:js dist/js/main.min.js -->
-    <script src="src/js/main.js"                                                      type="text/javascript"></script>
-    <script src="src/js/directives.js"                                                type="text/javascript"></script>
+    <script src="src/js/main.js" type="text/javascript"></script>
+    <script src="src/js/controllers/main-controller.js" type="text/javascript"></script>
     <!-- /build -->
 
   </body>
