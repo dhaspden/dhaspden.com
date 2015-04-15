@@ -16,13 +16,47 @@
 }
 /* --- */
 
-/* Body styling for background */
+/* Changing font of the headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: FiraSansMedium;
+}
+
+/* Changing font of the text */
+a,
+p {
+  font-family: FiraSansLight;
+}
+
+/* Add this padding to push the particles down */
 body {
-  background: url(../img/bg.jpeg) repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  padding-top: 60px;
+}
+
+/* Causes the element to take up the full screen (with the navbar) */
+.full-screen {
+  height: calc(100vh - 60px);
+}
+
+/* Removes the margin from the navbar */
+#main-nav {
+  margin-bottom: 0;
+}
+
+/* Centers an element vertically in its parent */
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Makes the element transparent */
+.transparent {
+  background: rgba(48, 48, 48, 0.4);
 }
 
 /* Fixing the width of the icon so each button is the same size */
@@ -32,58 +66,26 @@ body {
   text-align: center;
 }
 
-/* Sets up the content so that it is centered vertically on page */
-.outer {
-  display: table;
-  position: relative;
-  min-height: 100vh;
-  height: 100vh;
-  width: 100%;
-}
-
-.contents {
-  display: table-cell;
-  vertical-align: middle;
-}
-/* --- */
-
-/* Styling for my name and title */
-.my-name {
-  color: white;
-  font-size: 52px;
-  font-family: FiraSansMedium;
-  text-align: center;
-  text-shadow: 5px 5px 5px #000000;
-}
-
-.my-title {
-  color: white;
-  margin-top: -3px;
-  font-family: FiraSansLight;
-  text-align: center;
-  text-shadow: 5px 5px 5px #000000;
-}
-/* --- */
-
-hr {
-  margin-top: -1px;
-  border-width: 2px 0;
-  width: 50%;
-  box-shadow: 5px 5px 5px #000000;
-}
-
 /* Styling for all of the social buttons */
-.social {
-  border: none;
-  color: white;
-  text-shadow: 2px 2px 2px #000000;
-  font-size: 3.5em;
-  -webkit-transition: color 1s;
-  -moz-transition: color 1s;
-  -o-transition: color 1s;
-  transition: color 1s;
+.social-container {
+  padding-top: 20px;
 }
 
+/* Gives each social button a colour transition */
+.social {
+  color: #ffffff;
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  transition: color 0.25s;
+}
+
+/* Gives each social button a finger icon when moused over */
+.social:hover {
+  cursor: pointer;
+}
+
+/* Each social button has a colour transition on mouse over */
 .facebook:hover {
   color: #234C8A;
 }
@@ -100,7 +102,9 @@ hr {
   color: #F18300;
 }
 
-.hvr-buzz {
-  vertical-align: baseline;
+/* Particles take up the entire screen on the landing page */
+#particles {
+  position: absolute;
+  height: calc(100vh - 60px);
+  width: 100%;
 }
-/* --- */
