@@ -3,7 +3,13 @@ var application = angular.module('application.controllers.main', []);
 /* Main controller for the landing page */
 application.controller('MainController', ['$scope',
   function($scope) {
-    
+
+    /* Checks that the input given is not blank */
+    $scope.isInputValid = function(form, element) {
+      if ($scope[form][element].$valid) return true;
+      return false;
+    }
+
     /* Sets up the particle backdrop for the splash screen */
     $scope.initParticles = function() {
       particlesJS('welcome-splash', {
