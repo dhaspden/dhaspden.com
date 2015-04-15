@@ -2,6 +2,7 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
+/* Setting up the Express environment */
 exports.setup = function(app, express) {
 
   var env = process.env.NODE_ENV || 'dev';
