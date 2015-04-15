@@ -23,6 +23,8 @@
     "bootstrap": "~3.3.2",
     "font-awesome": "~4.2.0",
     "fira": "~0.1.0",
-    "Hover": "~2.0.0"
+    "bootswatch-dist": "slate",
+    "angular-scroll": "~0.6.5",
+    "particles.js": "~1.1.0"
   }
 }
