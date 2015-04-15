@@ -1,4 +1,5 @@
-var dependencies = ['ui.router', 'duScroll', 'application.controllers.main'];
+var dependencies = ['ui.router', 'duScroll', 'application.controllers.main', 
+  'application.directives', 'application.services'];
 var application = angular.module('application', dependencies);
 
 /* Configures the state manager for the Angular application */
