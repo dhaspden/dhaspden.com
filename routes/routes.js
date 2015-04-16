@@ -1,7 +1,10 @@
-module.exports = function(app, express) {
+var ContactRoutes = require('./contact-routes.js');
+var AppRoutes = require('./app-routes.js');
 
-  app.get('*', function(req, res) { 
-    res.render('index.html');
-  });
+/* Loads the application routes */
+module.exports = function(app) {
+
+  app.use('/api/contact', ContactRoutes);
+  app.use('*', AppRoutes);
 
 };
