@@ -1,0 +1,31 @@
+---
+- hosts: all
+  user: dylan
+
+  tasks:
+    - name: Create project directory
+      file: path=/var/www/dhaspden.com state=directory owner=dylan mode=0775
+
+    - name: Pull any changes in repository
+      git: repo=git@github.com:dhaspden/dhaspden.com.git dest=/var/www/dhaspden.com
+      sudo_user: dylan
+
+    - name: Copy Gmail account configuration over
+      copy: src=../config/account.json dest=/var/www/dhaspden.com/config/account.json
+
+    - name: Install NPM modules
+      npm: path=/var/www/dhaspden.com production=yes
+      sudo: yes
+
+    - name: Install Bower modules
+      command: /usr/local/bin/bower install
+      args:
+        chdir: /var/www/dhaspden.com
+
+    - name: Kill any instances of the application running
+      command: /usr/local/bin/pm2 kill
+
+    - name: Restart the server with the new changes
+      command: /usr/local/bin/pm2 start start.js
+      args:
+        chdir: /var/www/dhaspden.com
