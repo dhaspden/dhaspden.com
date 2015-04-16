@@ -4,6 +4,6 @@ var expressConfig = require('./config/express-config');
 var app = express();
 expressConfig.setup(app, express);
 
-var routes = require('./routes/routes')(app, express);
+require('./routes/routes.js')(app);
 
 module.exports = app;
