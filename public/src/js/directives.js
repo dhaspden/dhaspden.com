@@ -25,7 +25,6 @@ application.directive('particle', function() {
 
   return {
     link: function(scope, element, attrs) {
-      console.log(element);
       particlesJS(element[0].attributes.id.value, {
         particles: {
           color: '#fff',
