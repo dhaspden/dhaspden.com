@@ -18,7 +18,7 @@ application.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
     .state('home', {
       url: '/',
       controller: 'MainController',
-      templateUrl: 'src/views/main.html'
+      templateUrl: '/src/views/main.html'
     });
 
   }]
