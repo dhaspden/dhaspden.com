@@ -22,10 +22,14 @@
       args:
         chdir: /var/www/dhaspden.com
 
-    - name: Kill any instances of the application running
-      command: /usr/local/bin/pm2 kill
+    - name: Stop the server to be rebooted (if it's on)
+      command: /usr/local/bin/pm2 delete start
+      ignore_errors: True
+      args:
+        chdir: /var/www/dhaspden.com
 
-    - name: Restart the server with the new changes
+    - name: Start the server with the new changes
       command: /usr/local/bin/pm2 start start.js
+      ignore_errors: True
       args:
         chdir: /var/www/dhaspden.com
