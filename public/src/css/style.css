@@ -108,3 +108,8 @@ body {
   height: calc(100vh - 60px);
   width: 100%;
 }
+
+/* Adds some spacing to the bottom of the splash */
+#welcome-splash {
+  margin-bottom: 50px;
+}
