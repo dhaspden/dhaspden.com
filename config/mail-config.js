@@ -12,7 +12,7 @@ var transporter = nodemailer.createTransport({
 
 /* Sends an email with the given parameters */
 transporter.sendEmail = function(email, subject, name, message) {
-  mailer.sendMail({
+  transporter.sendMail({
     from: email,
     to: account.username,
     subject: subject,
