@@ -1,6 +1,7 @@
 node_modules
 bower_components
 public/dist
+account.json
 
 npm-debug.log
 
