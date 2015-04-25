@@ -1,23 +1,5 @@
 var application = angular.module('application.directives', []);
 
-/* Directive for adding an active class to a list item on hover */
-application.directive('listHover', function() {
-
-  console.log('List hover directive loaded.');
-
-  return {
-    link: function(scope, element, attrs) {
-      element.bind('mouseenter', function() {
-        element.toggleClass('active');
-      });
-      element.bind('mouseleave', function() {
-        element.removeClass('active');
-      });
-    }
-  }
-
-});
-
 /* Directive for drawing a plot of particles inside of a container */
 application.directive('particle', function() {
 
