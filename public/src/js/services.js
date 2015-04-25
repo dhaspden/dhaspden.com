@@ -1,23 +1,24 @@
-var application = angular.module('application.services', []);
+angular
+  .module('application.services', [])
+  .factory('ContactService', ContactService);
 
-/* Service for sending e-mail to me */
-application.factory('ContactService', ['$http', '$q', 
-  function($http, $q) {
+ContactService.$inject = ['$http', '$q'];
 
-    console.log('Contact Service loaded.');
+/* Service for sending email messages to server */
+function ContactService($http, $q) {
+  return {
+    send: send
+  };
 
-    return {
-      send: function(sendData) {
-        var q = $q.defer();
+  /* Sends the email message to the server for processing */
+  function send(sendData) {
+    var q = $q.defer();
 
-        $http.post('/api/contact', sendData)
-        .success(function(data) {
-          q.resolve(data);
-        });
+    $http.post('/api/contact', sendData)
+    .success(function(data) {
+      q.resolve(data);
+    });
 
-        return q.promise;
-      }
-    };
-
+    return q.promise;
   }
-]);
+}
